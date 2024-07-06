@@ -1,0 +1,15 @@
+function benfun(){
+  let p= new Promise(function(resolve){
+    setTimeout(function(){
+      resolve("Hello World")
+    },2000)
+
+  });
+  return p;
+}
+async function main(){
+let val= await benfun();
+  console.log(val);
+  
+}
+main();
