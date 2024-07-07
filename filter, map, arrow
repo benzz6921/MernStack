@@ -1,0 +1,30 @@
+// map and filter
+//input [1,2,3,4,5,]
+// output [2,4,6,8,10]
+
+//map
+
+/*const inp=[1,2,3,4,5];
+
+const ans=inp.map(function fun(i){
+    return i*2;
+});
+console.log(ans);
+*/
+
+
+//filter
+// give all even val from an array
+
+/*const arr=[1,2,3,4,5]
+
+const ans= arr.filter(function filterlogic(n){
+    if(n%2 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+})
+console.log(ans);
+*/
