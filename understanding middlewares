@@ -1,0 +1,39 @@
+const express= require ("express");
+const app= express();
+
+function userMiddleware(req,res, next){
+    if(username !="benin" && password !="pass"){
+        res.status(403).json({
+            msg:"incorrect input",
+        });
+    }else{
+        next();
+    }
+};
+
+function kidneyMiddleware(req,res,next){
+    if(kidneyID != 1 && kidneyID !=2){
+        res.status(403).json({
+            msg:"wrong input"
+        })
+    }else{
+        next();
+    }
+};
+
+app.get("/health-checkup", userMiddleware, kidneyMiddleware, function(req,res){
+    
+    res.send("your health is fine");
+});
+
+app.get("/heart-check", userMiddleware, function(req,res){
+    
+    res.send("your heart is fine");
+});
+
+app.get("/kidney-check", userMiddleware, kidneyMiddleware, function(req,res){
+    
+    res.send("your kidney is fine");
+});
+ 
+app.listen(3000);
