@@ -1,0 +1,26 @@
+<html>
+ <script>
+    async function sum2(){
+        const a = document.getElementById("first number").value;
+        const b = document.getElementById("second number").value;
+
+        const response= await fetch("https://sum-server.100xdevs.com/sum?a="+a +"&b="+b)
+        const ans = await response.text();
+        document.getElementById("final sum").innerHTML = ans;
+    }
+ </script>
+ <body>
+    <input id="first number" type = "text" placeholder="First number"></input> <br></br>
+
+    <input id="second number" type = "text" placeholder="First number"></input><br></br>
+
+    <button onclick="sum2()">calculate sum</button><br></br>
+   
+    <div id="final sum"> </div>
+ 
+
+
+</body>
+
+
+</html>
